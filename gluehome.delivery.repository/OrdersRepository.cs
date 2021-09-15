@@ -12,8 +12,9 @@ namespace gluehome.delivery.repository
             return Database.Orders.FirstOrDefault(x => x.orderNumber == orderNumber);
         }
 
-        public IEnumerable<Order> GetAll(Func<Order, bool> lambda)
+        public IEnumerable<Order> GetAll(Func<Order, bool> lambda = null)
         {
+            if (lambda == null) return Database.Orders;
             return Database.Orders.Where(lambda);
         }
 

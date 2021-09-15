@@ -11,5 +11,7 @@ namespace gluehome.delivery.services
         bool CompleteDelivery(Guid deliveryId);
         bool CancelDelivery(Guid deliveryId);
         IEnumerable<Delivery> GetDeliveriesByOrder(string orderNumber);
+        IEnumerable<Delivery> GetAllDeliveries();
+        Delivery GetDeliveryById(Guid id);
     }
 }

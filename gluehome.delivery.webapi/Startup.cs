@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using gluehome.delivery.repository;
 using gluehome.delivery.security;
 using gluehome.delivery.security.models;
+using gluehome.delivery.services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +53,11 @@ namespace gluehome.delivery.webapi
                 };
             });
             services.AddScoped<IJwt, JwtTokenGenerator>();
+            services.AddScoped<IDeliveryService, DeliveryService>();
+            services.AddScoped<IPartnersRepository, PartnerRepository>();
+            services.AddScoped<IRecipientRepository, RecipientRepository>();
+            services.AddScoped<IDeliveryRepository, DeliveryRepository>();
+            services.AddScoped<IOrdersRepository, OrdersRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "gluehome.delivery.webapi", Version = "v1" });

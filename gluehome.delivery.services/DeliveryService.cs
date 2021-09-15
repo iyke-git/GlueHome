@@ -26,6 +26,10 @@ namespace gluehome.delivery.services
             {
                 return false;
             }
+            if (accessWindow.startTime < DateTime.Now && accessWindow.endTime < DateTime.Now || deliveryId == default(Guid))
+            {
+                return false;
+            }
             var delivery = _deliveryRepo.GetById(deliveryId);
             if (delivery?.state == DeliveryStates.approved)
                 return true;
@@ -86,8 +90,11 @@ namespace gluehome.delivery.services
         public Guid CreateDelivery(Guid recipientId, Guid partnerId, string ordernNumber)
         {
             var recipient = _recipientRepo.GetById(recipientId);
+            if (recipient == null) return Guid.Empty;
             var partner = _partnerRepo.GetById(partnerId);
+            if (partner == null) return Guid.Empty;
             var order = _orderRepo.GetOrderByNo(ordernNumber);
+            if (order == null) return Guid.Empty;
             return _deliveryRepo.Add(new Delivery
             {
                 id = Guid.NewGuid(),
@@ -101,6 +108,16 @@ namespace gluehome.delivery.services
         public IEnumerable<Delivery> GetDeliveriesByOrder(string orderNumber)
         {
             return _deliveryRepo.GetDeliveryByOrder(orderNumber);
+        }
+
+        public IEnumerable<Delivery> GetAllDeliveries()
+        {
+            return _deliveryRepo.GetAll();
+        }
+
+        public Delivery GetDeliveryById(Guid id)
+        {
+            return _deliveryRepo.GetById(id);
         }
     }
 }

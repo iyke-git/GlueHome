@@ -3,6 +3,8 @@ using System.Net;
 using System.Net.Http;
 using gluehome.delivery.repository.models;
 using gluehome.delivery.services;
+using gluehome.delivery.webapi.models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.Logging;
 namespace gluehome.delivery.webapi.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class DeliveriesController : ControllerBase
     {
@@ -22,10 +25,15 @@ namespace gluehome.delivery.webapi.Controllers
             _deliverySvc = deliverySvc;
         }
 
+        [HttpGet]
+        public IActionResult Get(){
+            return Ok(_deliverySvc.GetAllDeliveries());
+        }
+
         [HttpPost]
-        public IActionResult Post(Delivery delivery)
+        public IActionResult Post(DeliveryCreation delivery)
         {
-            return Ok(_deliverySvc.CreateDelivery(delivery.recipient.id, delivery.partner.id, delivery.order.orderNumber));
+            return Ok(_deliverySvc.CreateDelivery(delivery.recipientId, delivery.partnerId, delivery.orderNumber));
         }
 
         [HttpPut]

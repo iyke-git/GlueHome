@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gluehome.delivery.security"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gluehome.delivery.repository", "gluehome.delivery.repository\gluehome.delivery.repository.csproj", "{36BF0754-F9DC-4CBC-BDCD-D8FF75E1EEBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gluehome.delivery.tests", "gluehome.delivery.tests\gluehome.delivery.tests.csproj", "{B78A70B7-8B69-42F0-B245-EC9DB7908467}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{36BF0754-F9DC-4CBC-BDCD-D8FF75E1EEBE}.Release|x64.Build.0 = Release|Any CPU
 		{36BF0754-F9DC-4CBC-BDCD-D8FF75E1EEBE}.Release|x86.ActiveCfg = Release|Any CPU
 		{36BF0754-F9DC-4CBC-BDCD-D8FF75E1EEBE}.Release|x86.Build.0 = Release|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Debug|x64.Build.0 = Debug|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Debug|x86.Build.0 = Debug|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Release|x64.ActiveCfg = Release|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Release|x64.Build.0 = Release|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Release|x86.ActiveCfg = Release|Any CPU
+		{B78A70B7-8B69-42F0-B245-EC9DB7908467}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
